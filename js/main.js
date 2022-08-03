@@ -38,10 +38,20 @@ window.addEventListener("load", () => {
     };
 
     //Events
-    buttonAddTask.addEventListener("click", () => {
-        const newTask = inputFormTask.value;
+    buttonAddTask.onclick = () => {
+        const newTask = inputFormTask.value.trim();
+        if(newTask.length == 0) {
+            Swal.fire("Ops...", "O nome da task não é válido", "warning");
+            return;
+        }
         generateTask(newTask);
         inputFormTask.value = "";
-    });
+    };
+
+    inputFormTask.addEventListener("keypress", (event) => {
+        if(event.key === "Enter") {
+            buttonAddTask.onclick()
+        }
+    })
 
 })
