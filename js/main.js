@@ -22,8 +22,8 @@ window.addEventListener("load", () => {
         const p = document.createElement("p");
         
         li.setAttribute("class", "task-item");
-        imgClose.setAttribute("src", "/icons/close.png");
-        imgCheck.setAttribute("src", "/icons/check.png");
+        imgClose.setAttribute("src", "./icons/close.png");
+        imgCheck.setAttribute("src", "./icons/check.png");
         p.textContent = task;
 
         imgCheck.addEventListener("click", () => checkTask(li));
